@@ -1,0 +1,10 @@
+.env
+.idea/
+.DS_Store
+artifacts/
+cache/
+build/
+node_modules/
+coverage/
+coverage.json
+types

@@ -1,0 +1,81 @@
+{
+  "name": "nexusmutual",
+  "version": "1.5.0",
+  "description": "NexusMutual smart contracts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NexusMutual/smart-contracts.git"
+  },
+  "keywords": [
+    "solidity",
+    "ethereum",
+    "smart",
+    "contracts",
+    "insurance"
+  ],
+  "author": "nexusmutual.io",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/NexusMutual/smart-contracts/issues"
+  },
+  "homepage": "https://github.com/NexusMutual/smart-contracts",
+  "dependencies": {
+    "@openzeppelin/contract-loader": "^0.6.1",
+    "@openzeppelin/contracts": "^2.5.1",
+    "@openzeppelin/contracts-v4": "npm:@openzeppelin/contracts@^4.0.0",
+    "@openzeppelin/test-helpers": "^0.5.11",
+    "@truffle/hdwallet-provider": "^1.0.42",
+    "@uniswap/v2-core": "^1.0.1",
+    "@uniswap/v2-periphery": "^1.1.0-beta.0",
+    "bn.js": "^5.1.2",
+    "dotenv": "^8.2.0",
+    "es6-promise-pool": "^2.5.0",
+    "ethereumjs-util": "7.0.1",
+    "node-fetch": "^2.6.7"
+  },
+  "devDependencies": {
+    "@nomiclabs/hardhat-etherscan": "^2.1.0",
+    "@nomiclabs/hardhat-truffle5": "^2.0.0",
+    "@nomiclabs/hardhat-web3": "^2.0.0",
+    "@typechain/truffle-v5": "^3.0.0",
+    "chai": "^4.2.0",
+    "coveralls": "^3.1.0",
+    "decimal.js": "^10.2.1",
+    "eslint": "^6.8.0",
+    "eslint-config-semistandard": "^15.0.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "ethlint": "^1.2.5",
+    "glob": "^7.1.6",
+    "hardhat": "^2.6.1",
+    "hardhat-contract-sizer": "^2.0.2",
+    "mocha": "^7.1.2",
+    "nodemon": "^2.0.2",
+    "prettier": "^1.19.1",
+    "prettier-eslint": "^9.0.1",
+    "prompts": "^2.4.1",
+    "solidity-coverage": "^0.7.16",
+    "ts-generator": "^0.1.1",
+    "typechain": "^4.0.0",
+    "web3": "^1.3.0"
+  },
+  "scripts": {
+    "compile": "hardhat compile",
+    "dev": "nodemon --ext js,sol -x 'hardhat test test/index.js --show-stack-traces'",
+    "dev-integration": "nodemon --ext js,sol -x 'hardhat test test/integration/index.js --show-stack-traces'",
+    "dev-unit": "nodemon --ext js,sol -x 'hardhat test test/unit/index.js --show-stack-traces'",
+    "coverage": "NODE_OPTIONS='--max-old-space-size=8192' hardhat coverage",
+    "test": "hardhat test test/index.js",
+    "test-integration": "hardhat test test/integration/index.js",
+    "test-unit": "hardhat test test/unit/index.js",
+    "test-fuzzing": "hardhat test test/fuzzing/index.js",
+    "deploy": "hardhat run scripts/deploy.js",
+    "test-fork": "TEST_ENV_FORK=http://erigon.nexusmutual.io  hardhat test test/fork/index.js",
+    "typechain": "hardhat typechain",
+    "distributor-deploy-kovan": "hardhat run --network kovan scripts/distributor/deploy-distributor.js",
+    "self-kyc-kovan": "hardhat run --network kovan scripts/distributor/self-kyc.js"
+  }
+}
